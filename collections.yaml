@@ -1,0 +1,91 @@
+openapi: 3.0.0
+info:
+  title: Drive-Ease
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /vehicles:
+    get:
+      tags:
+        - default
+      summary: Get All Vehicles
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: Add Vehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Toyota
+                price: 25000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles/2:
+    get:
+      tags:
+        - default
+      summary: Get Vehicle by ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles/1:
+    put:
+      tags:
+        - default
+      summary: Update Vehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: BMW
+                price: 30000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: Delete Vehicle
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles/1/hire:
+    post:
+      tags:
+        - default
+      summary: Hire Vehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                pickupLocation: Galle
+                dropLocation: Negombo
+                pickupDate: '2024-04-24T16:26:35.539+00:00'
+                returnDate: '2024-04-24T16:26:35.539+00:00'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
